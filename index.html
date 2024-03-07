@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập thông tin cá nhân</title>
+    <link rel="stylesheet" href="styleForm.css">
+</head>
+<body>
+   <div class="container">
+     <div class="container_form">
+         <h1>Điền thông tin cá nhân</h1>
+         <form action="#" id="myform">
+             <div class="input_infor">
+                 <label>
+                     Nhập tên:
+                     <input type="text" placeholder="Nhập tên..." id="input_name">
+                 </label>
+                 <label>
+                     Ngày tháng năm sinh:
+                     <input type="date" id="input_date">
+                 </label>
+                 <label>
+                     Số CCCD:
+                     <input type="text" id="input_CCCD">
+                 </label>
+                 <label>
+                     Địa chỉ:
+                     <input type="text" id="input_add">
+                 </label>
+             </div>
+             <div>
+                 <button type="button" id="btn_submit" onclick="submitForm()">
+                     <a id="linkToTest">SUBMIT</a>
+                 </button>
+             </div>
+         </form>
+     </div>
+   </div>
+<script>
+    function submitForm(){
+        const nameA = document.getElementById('input_name').value;
+        const date = document.getElementById('input_date').value;
+        const CCCD = document.getElementById('input_CCCD').value;
+        const address = document.getElementById('input_add').value;
+        if(nameA && date && CCCD && address){
+            var link = document.getElementById('linkToTest');
+            link.href = 'test.html';
+        } else {
+            alert('Cần nhập đủ thông tin!')
+        }
+    }
+</script>
+</body>
+</html>

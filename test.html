@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="styleTest.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container_form">
+            <h1>Làm bài thi</h1>
+            <form action="#" id="myform">
+                <div class="input1" id="input1">
+                    <h2>Câu hỏi loại 1:</h2>
+                </div>
+                <div class="input2" id="input2">
+                    <h2>Câu hỏi loại 2:</h2>
+
+                </div>
+                <div class="input3" id="input3">
+                    <h2>Câu hỏi loại 3:</h2>
+                </div>
+                <div class="input4" id="input4">
+                    <h2>Câu hỏi loại 4:</h2>
+                </div>
+                <div id="result">
+                </div>
+                <div>
+                    <button type="button" id="btn_submit" onclick="done()">
+                        SUBMIT
+                    </button>
+                </div>
+            </form>
+        </div>
+      </div>
+<script>
+    const input1 = document.getElementById('input1');
+    for(let i = 0; i < 10; i++){
+        var opt = "options" + i;
+        input1.innerHTML += `<label>
+                                Câu ${i + 1}: <br>
+                                <label><input type="radio" name= ${opt} class="checkbox" id="radio1">Đúng</label><br>
+                                <label><input type="radio" name= ${opt} class="checkbox" id="radio2">Sai</label><br>
+                            </label>`;
+    }
+    const input2 = document.getElementById('input2');
+    for(let i = 0; i < 10; i++){
+        var opt = "options" + i;
+        input2.innerHTML += `<label>
+                                Câu ${i + 1}: <br>
+                                <label><input type="radio" name= ${opt} class="checkbox" id="radio1">Đáp án 1</label><br>
+                                <label><input type="radio" name= ${opt} class="checkbox" id="radio2">Đáp án 2</label><br>
+                                <label><input type="radio" name= ${opt} class="checkbox" id="radio2">Đáp án 3</label><br>
+                                <label><input type="radio" name= ${opt} class="checkbox" id="radio2">Đáp án 4</label><br>
+                            </label>`;
+    }
+    const input3 = document.getElementById('input3');
+    for(let i = 0; i < 10; i++){
+        input3.innerHTML += `<label>
+                                Câu ${i + 1}: <br>
+                                <label><input type="checkbox" name="options1" class="checkbox" id="radio1">Lựa chọn 1</label><br>
+                                <label><input type="checkbox" name="options2" class="checkbox" id="radio2">Lựa chọn 2</label><br>
+                                <label><input type="checkbox" name="options3" class="checkbox" id="radio2">Lựa chọn 3</label><br>
+                                <label><input type="checkbox" name="options4" class="checkbox" id="radio2">Lựa chọn 4</label><br>
+                            </label>`;
+    }
+    const input4 = document.getElementById('input4');
+    for(let i = 0; i < 10; i++){
+        input4.innerHTML += `<label>
+                                Câu ${i + 1}: <br>
+                                <label><input type="text" placeholder="Nhập câu trả lời..."></label><br>
+                            </label>`;
+    }
+    
+    const result = document.getElementById('result');
+    result.innerHTML = '';
+    function done(){
+        result.innerHTML = `
+                    <label>
+                        Result: 36/40
+                    </label>`;
+    }
+</script>
+</body>
+</html>
